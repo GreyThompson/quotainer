@@ -1,0 +1,23 @@
+<h1><%= @user.full_name %>'s Quotes:</h1>
+
+<% if current_user.present? %>
+  <%= link_to 'New Quote', new_user_quote_path(@user) %> |
+<% end %> 
+
+<%= link_to 'Back', users_path %>
+
+<% @user.quotes.each do |quote| %>
+
+  <h2><%= quote.print_quote %></h2>
+  <h3><%= quote.print_author %></h3>
+  <p>
+    <% if current_user == @user %>
+    <%= link_to 'Edit Quote', edit_user_quote_path(@user, quote) %>
+    | <%= link_to 'Destroy Quote', [quote.user, quote],
+                method: :delete,
+                data: { confirm: 'Are you sure?'} %>
+    <% end %>
+  </p>
+
+
+<% end %>

@@ -1,0 +1,22 @@
+<h1>All Users</h1>
+
+<%= link_to 'New User', new_user_path %><br><br>
+
+<table>
+  <tr>
+    <td>Username</td>
+    <td>Name</td>
+    <td>Quote Count</td>
+    <td colspan='1'></td>
+  </tr>
+  
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= user.handle %></td>
+    <td><%= user.full_name %></td>
+    <td><%= user.quotes.count %></td>
+    <td><%= link_to 'View Quotes', user_path(user) %>
+  </tr>
+  <% end %>
+</table>
+

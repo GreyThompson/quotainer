@@ -1,6 +1,33 @@
-<h1>Welcome to Quotainer!</h1>
-<p>The easiest way to save, sort, and share your quotes.</p>
-
-<p><%= link_to 'All Quotes', quotes_path %></p>
-<p><%= link_to 'New Quote', new_quote_path %></p>
+<div class="container">
+  <div class="row">
+    <div class="jumbotron">
+      <h1>Welcome to <span class="homepage-logo">Quotainer</span></h1>
+      <p>The easiest way to save, sort, and share your quotes.</p>
+      
+      <% if current_user.present? %>
+      <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3">
+          <%= link_to 'My Quotes', user_quotes_path(current_user.id), class: "btn btn-success btn-lg homepage-btn" %>
+        </div>
+        <div class="col-sm-3">
+          <%= link_to 'Logout', sessions_path, method: :delete, class: "btn btn-danger btn-lg homepage-btn" %>
+        </div>
+      </div>
+      <% else %>
+      <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3">
+          <%= link_to 'Sign Up', new_user_path, class: "btn btn-success btn-lg homepage-btn" %>
+        </div>
+        <div class="col-sm-3">
+          <%= link_to 'Login', new_sessions_path, class: "btn btn-primary btn-lg homepage-btn" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 

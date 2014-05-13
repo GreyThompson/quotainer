@@ -13,3 +13,101 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: 'Vollkorn', serif;
+  font-style: italic;
+  /*background-color: #fcf8f2;*/
+}
+
+.navbar-default {
+  /*background-color: #89c2ff;*/
+  /*color: #0057b2;*/
+}
+
+.navbar-default .navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-size: 2em;
+  /*color: #0057b2;*/
+}
+
+.user-welcome {
+  /*color: #777;*/
+  padding: 15px;
+  /*padding-bottom: 15px;*/
+  line-height: 20px  
+}
+
+.navbar-default .navbar-nav li a {
+  /*color: #0057b2;*/
+}
+
+.text-highlight {
+  /*color: #ffa100;*/
+  font-weight: bold;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+.homepage-logo {
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+}
+
+.homepage-btn {
+  font-style: normal;
+}
+
+.footer {
+  background-color: #222;
+  height: 200px;
+  font-style: normal;
+}
+
+.footer-copy-wrapper {
+  margin-top: 80px;
+  text-align: center;
+  color: white;
+}
+
+/* ------ Quote Display Styleing ------ */
+.quote-box-wrapper {
+  /*border: 1px solid red;*/
+  /*border-radius: 0.3em;*/
+  /*background-color: #fcfaf2;*/
+  margin: 10px;
+}
+
+.quote-box {
+  width: 70%;
+  margin: auto;
+}
+
+.quote-copy {
+  text-align: justify;
+}
+
+.quote-author-copy {
+  color: #c90707;
+}
+
+.quote-link-box {
+  font-family: 'Vollkorn', serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+

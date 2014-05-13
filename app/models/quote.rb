@@ -9,7 +9,7 @@ class Quote < ActiveRecord::Base
   end
 
   def print_author
-    "- #{author}"
+    "- #{author.upcase}"
   end
 
 end

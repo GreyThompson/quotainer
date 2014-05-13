@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504165208) do
+ActiveRecord::Schema.define(version: 20140509010726) do
 
   create_table "quotes", force: true do |t|
     t.string   "author"
@@ -32,6 +32,11 @@ ActiveRecord::Schema.define(version: 20140504165208) do
     t.text     "bio"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "salt"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

@@ -1,51 +1,58 @@
 class QuotesController < ApplicationController
 
   def index
-    @quotes = Quote.all
+    @user = current_user
+    @quotes = @user.quotes
   end
 
   def new
-    @quote = Quote.new
+    @user = User.find(params[:user_id])
+    @quote = @user.quotes.new
   end
 
   def create
-    @quote = Quote.new(quote_params)
+    @user = User.find(params[:user_id])
+    @quote = @user.quotes.new(quote_params)
 
     if @quote.save
-      redirect_to @quote
+      redirect_to user_quotes_path(@user)
     else
       render 'new'
     end
   end
 
   def show 
-    @quote = Quote.find(params[:id])
+    @user = current_user
+    @quote = @user.quotes.find(params[:id])
   end
 
   def edit
-    @quote = Quote.find(params[:id])
+    @user = User.find(params[:user_id])
+    @quote = @user.quotes.find(params[:id])
   end
 
   def update
-    @quote = Quote.find(params[:id])
+    @user = User.find(params[:user_id])
+    @quote = @user.quotes.find(params[:id])
 
     if @quote.update(quote_params)
-      redirect_to @quote
+      redirect_to user_quotes_path(@user)
     else
       render 'edit'
     end
   end
 
   def destroy
-    @quote = Quote.find(params[:id])
+    @user = User.find(params[:user_id])
+    @quote = @user.quotes.find(params[:id])
     @quote.destroy
 
-    redirect_to quotes_path
+    redirect_to user_quotes_path(@user)
   end
 
   private
     def quote_params
-      params.require(:quote).permit(:handle, :body, :author)
+      params.require(:quote).permit(:body, :author)
     end
 
 end
