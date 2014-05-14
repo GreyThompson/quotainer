@@ -38,6 +38,8 @@ group :production do
   
 end
 
+gem 'jwt', '0.1.11'
+
 ruby '2.1.1'
 
 # Use ActiveModel has_secure_password
