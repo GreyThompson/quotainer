@@ -11,7 +11,7 @@
 <div class="container-fluid">
   <div class="row">
   <!-- Each Quote Loop Start -->
-  <% @quotes.reverse.each do |quote| %>
+  <% @quotes.order('updated_at DESC').each do |quote| %>
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-8">
