@@ -1,0 +1,8 @@
+<h1>Your First Quote</h1>
+
+<p>Welcome to Quotainer! Since you're new here, you probably want to create your first quote. Just fill in the info below and hit submit!</p>
+
+<p>If you don't have a quote handy, don't sweat. Just press the skip button and we'll get back to it later.</p>
+<%= link_to 'Skip >>', user_quotes_path(current_user), class: "btn btn-primary" %><br><br>
+
+<%= render 'form' %>

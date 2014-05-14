@@ -1,4 +1,4 @@
-<h1><%= current_user.full_name %>'s Quotes</h1>
+<h1>My Quotes</h1>
 
 <% if current_user == @user %>
   <p><%= link_to new_user_quote_path(current_user.id), class: "quote-link-box" do %>
@@ -23,11 +23,11 @@
           </div>
         </div>
         <div class="col-sm-2">
-          <div class="row quote-link-box">
-            <%= link_to user_quote_path(quote.user, quote), class: "quote-box-link" do %>
+          <!-- <div class="row quote-link-box">
+            <%# link_to user_quote_path(quote.user, quote), class: "quote-box-link" do %>
               <i class="glyphicon glyphicon-star"></i><span>Show</span>
-            <% end %>
-          </div>
+            <%# end %>
+          </div> -->
           <div class="row quote-link-box">
             <%= link_to edit_user_quote_path(quote.user, quote), class: "quote-box-link" do %>
               <i class="glyphicon glyphicon-edit"></i><span>Edit</span>

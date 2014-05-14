@@ -30,7 +30,7 @@
       <div class="collapse navbar-collapse pull-right" id="navbar-collapse-1">
         <ul class="nav navbar-nav">
           <% if current_user.present? %>
-          <li class="user-welcome">Welcome, <span class="text-highlight"><%= current_user.first_name %></span>.</li>
+          <li class="user-welcome">Welcome, <span class="text-highlight"><%= current_user.email %></span>.</li>
           <li><%= link_to 'My Quotes', user_quotes_path(current_user.id) %></li>
           <li><%= link_to 'Logout', sessions_path, method: :delete %></li>
           <% else %>
@@ -50,8 +50,8 @@
     <div class="container">
       <div class="row">
         <div class="footer-copy-wrapper">
-            <p>Copyright &copy; 2014 | GreyGetsCode.com</p>
-            <p>Built with &hearts; at BrainStation</p>
+            <p>Copyright &copy; 2014 | Quotainer.com</p>
+            <p>Built with &hearts; by Grey Thompson</p>
           </div>
       </div>
     </div>

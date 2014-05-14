@@ -8,6 +8,13 @@ class QuotesController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @quote = @user.quotes.new
+
+    if @user.quotes.count == 0
+      render 'first_quote'
+    else
+      render 'new'
+    end
+    
   end
 
   def create
@@ -48,6 +55,9 @@ class QuotesController < ApplicationController
     @quote.destroy
 
     redirect_to user_quotes_path(@user)
+  end
+
+  def first_quote
   end
 
   private
