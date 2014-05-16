@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'sorcery'
+gem 'bootstrap_form'
 
 group :development do
   # Use sqlite3 as the database for Active Record
