@@ -165,6 +165,22 @@ body {
   font-weight: bold;
 }
 
+@media (max-width: 767px) {
+  .homepage-navbar-light {
+  transition:none;
+  -webkit-transition:none;
+  -moz-transition:none;
+  }
+  .homepage-navbar-dark {
+    transition:none;
+  -webkit-transition:none;
+  -moz-transition:none;
+  }
+  .homepage-jumbo {
+    padding-top: 100px;
+    padding-bottom: 200px;
+  }
+}
 
 
 
