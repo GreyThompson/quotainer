@@ -1,19 +1,19 @@
-<h1>Edit Quote</h1>
+<div class="container" id="modal-new-fields">
+  <div class="col-sm-6 col-sm-offset-2">
+    <h1 class="text-center">Edit Quote</h1>
+    <%= bootstrap_form_for([@user, @quote]) do |f| %>
 
-<%= form_for ([@user, @quote]) do |f| %>
+      <%= f.text_area :body, placeholder: 'Enter the quote...' %>
+      <%=  f.text_field :author, placeholder: 'Enter the author...' %>
+      <div class="row">
+        <div class="col-sm-8">
+          <%= f.submit 'Save It', class: "btn btn-success btn-block" %>
+        </div>
+        <div class="col-sm-4">
+          <%= link_to "Cancel", user_quotes_path, class: "btn btn-danger btn-block" %>
+        </div>
+      </div>
 
-  <p>
-    <%= f.label :body %>:<br>
-    <%= f.text_area :body %>
-  </p>
-
-  <p>
-    <%=  f.label :author %>:<br>
-    <%=  f.text_field :author %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-
-<% end %>
+    <% end %><br><br>
+  </div>
+</div>

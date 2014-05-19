@@ -1,33 +1,139 @@
+<nav id="homepage-navbar" class="navbar navbar-default navbar-fixed-top homepage-navbar-light" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'Quotainer', root_url, class: "homepage-navbar-brand" %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse pull-right" id="navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <% if current_user.present? %>
+        <li class="user-welcome">Welcome, <span class="text-highlight"><%= current_user.email %></span>.</li>
+        <li><%= link_to 'My Quotes', user_quotes_path(current_user.id) %></li>
+        <li><%= link_to 'Logout', sessions_path, method: :delete %></li>
+        <% else %>
+        <li><%= link_to 'Login', new_sessions_path, class: "home-nav-btn" %></li>
+        <li><%= link_to 'Get Started Free', new_user_path, class: "home-nav-btn sign-up-btn" %></li>
+        <% end %>
+  </div>
+</nav>
+
+<!-- New Jumbotron Start -->
+<div class="jumbotron homepage-jumbo">
+  <h1 class="italic-font">Welcome to <span class="homepage-logo">Quotainer</span></h1>
+  <p class="italic-font">The simplest way to save and share your favorite quotes.</p>
+  
+  <% if current_user.present? %>
+  <div class="row">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-3">
+      <%= link_to 'My Quotes', user_quotes_path(current_user.id), class: "btn btn-success btn-lg btn-block homepage-btn" %>
+    </div>
+    <div class="col-sm-3">
+      <%= link_to 'Logout', sessions_path, method: :delete, class: "btn btn-danger btn-lg btn-block homepage-btn" %>
+    </div>
+  </div>
+  <% else %>
+  <div class="row">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-3">
+      <%= link_to 'Get Started Free', new_user_path, class: "btn btn-success btn-lg btn-block homepage-btn" %>
+    </div>
+    <div class="col-sm-3">
+      <%= link_to 'Login', new_sessions_path, class: "btn btn-primary btn-lg btn-block homepage-btn" %>
+    </div>
+  </div>
+  <% end %>
+</div>
+<!-- New Jumbotron End -->
+
+<!-- Body Copy Start -->
 <div class="container">
   <div class="row">
-    <div class="jumbotron">
-      <h1>Welcome to <span class="homepage-logo">Quotainer</span></h1>
-      <p>The simplest way to save and share your favorite quotes.</p>
-      
-      <% if current_user.present? %>
-      <div class="row">
-        <div class="col-sm-3">
+      <h1 class="text-center">A Digital Notebook For Your Quotes</h1>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="col-sm-4 homepage-feature">
+        <div class="row">
+          <h2 class="text-center">Create An Account In Seconds</h2>
         </div>
-        <div class="col-sm-3">
-          <%= link_to 'My Quotes', user_quotes_path(current_user.id), class: "btn btn-success btn-lg btn-block homepage-btn" %>
+        <div class="row">      
+          <i class="glyphicon glyphicon-user home-glyph"></i>
         </div>
-        <div class="col-sm-3">
-          <%= link_to 'Logout', sessions_path, method: :delete, class: "btn btn-danger btn-lg btn-block homepage-btn" %>
-        </div>
-      </div>
-      <% else %>
-      <div class="row">
-        <div class="col-sm-3">
-        </div>
-        <div class="col-sm-3">
-          <%= link_to 'Sign Up', new_user_path, class: "btn btn-success btn-lg btn-block homepage-btn" %>
-        </div>
-        <div class="col-sm-3">
-          <%= link_to 'Login', new_sessions_path, class: "btn btn-primary btn-lg btn-block homepage-btn" %>
+        <div class="row">
+          <h3 class="homepage-feature-copy">Getting started with Quotainer takes no time at all. After creating an account, you can immediately begin saving your favourite quotes.</h3>
         </div>
       </div>
-      <% end %>
+      <div class="col-sm-4 homepage-feature">
+        <div class="row">
+          <h2 class="text-center">Never Lose Your Favourite Quotes</h2>
+        </div>
+        <div class="row">      
+          <i class="glyphicon glyphicon-heart home-glyph"></i>
+        </div>
+        <div class="row">
+          <h3 class="homepage-feature-copy">You'll never misplace your favourite quotes again. They're all saved, safe and sound, in Quotainer, availble to you whenever you need them.</h3>
+        </div>
+      </div>
+      <div class="col-sm-4 homepage-feature">
+        <div class="row">
+          <h2 class="text-center">Your Quotes Available Everywhere</h2>
+        </div>
+        <div class="row">      
+          <i class="glyphicon glyphicon-cloud home-glyph"></i>
+        </div>
+        <div class="row">
+          <h3 class="homepage-feature-copy">Your quotes are saved to the cloud and are available to you anywhere you have internet access - including on you mobile phone.</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <%= link_to 'Get Started Free', new_user_path, class: "btn btn-success btn-lg btn-block homepage-btn" %>
     </div>
   </div>
 </div>
+<!-- Body Copy End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

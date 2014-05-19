@@ -19,20 +19,83 @@
 
 body {
   font-family: 'Vollkorn', serif;
-  font-style: italic;
-  /*background-color: #fcf8f2;*/
+  font-style: normal;
+  background-color: #f5f6f7;
 }
 
-.navbar-default {
-  /*background-color: #89c2ff;*/
-  /*color: #0057b2;*/
+#homepage-navbar {
+  border: none;
+}
+
+.homepage-navbar-light {
+  background-color: rgba(225,225,225,0);
+  -webkit-transition: background-color 0.7s; /* For Safari 3.1 to 6.0 */
+  transition: background-color 0.7s;
+}
+
+.homepage-navbar-dark {
+  background-color: rgba(0,0,0,0.5);
+  -webkit-transition: background-color 0.7s; /* For Safari 3.1 to 6.0 */
+  transition: background-color 0.7s;
+}
+
+.homepage-navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-size: 2em;
+  color: white;
+}
+
+.homepage-navbar-brand:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.home-nav-btn {
+  color: white !important;
+}
+
+.homepage-jumbo {
+  background: 
+    linear-gradient(
+      rgba(1, 1, 1, 0.45), 
+      rgba(1, 1, 1, 0.45)
+    ),
+
+    url('/assets/jumbo-background.jpg');
+
+  background-size: cover;
+  color: white;
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+.homepage-feature {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.homepage-feature-copy {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: justify;
+}
+
+.italic-font {
+  font-style: italic;
+}
+
+.home-glyph {
+  font-size: 72px;
+  display: block;
+  text-align: center;
 }
 
 .navbar-default .navbar-brand {
   font-family: 'Playfair Display', serif;
   font-style: normal;
   font-size: 2em;
-  /*color: #0057b2;*/
+  /*color: white;*/
 }
 
 .user-welcome {
@@ -40,10 +103,6 @@ body {
   padding: 15px;
   /*padding-bottom: 15px;*/
   line-height: 20px  
-}
-
-.navbar-default .navbar-nav li a {
-  /*color: #0057b2;*/
 }
 
 .text-highlight {
@@ -62,6 +121,8 @@ body {
 
 .homepage-btn {
   font-style: normal;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .footer {
@@ -91,6 +152,7 @@ body {
 
 .quote-copy {
   text-align: justify;
+  font-style: italic;
 }
 
 .quote-author-copy {

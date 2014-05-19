@@ -12,7 +12,7 @@ class QuotesController < ApplicationController
     if @user.quotes.count == 0
       render 'first_quote'
     else
-      render 'new'
+      render 'new'#, layout: false
     end
     
   end

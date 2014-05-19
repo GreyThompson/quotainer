@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Save and share your favorite quotes | Quotainer</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- Bootstrap Responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Add Google Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Playfair+Display:900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- jQuery for Navbar Color Change -->
+  <script>
+    var threshold = 71;
+    $(document).ready(function() {
+      $(window).scroll(function() {
+
+        if (document.body.scrollTop + threshold > 659) {
+          $('#homepage-navbar').removeClass('homepage-navbar-light');
+          $('#homepage-navbar').addClass('homepage-navbar-dark');
+        }
+
+        if (document.body.scrollTop + threshold < 659) {
+          // Add dark navbar class
+          console.log('YOU HIT THE TRIGGER')
+          $('#homepage-navbar').removeClass('homepage-navbar-dark');
+          $('#homepage-navbar').addClass('homepage-navbar-light');
+        }
+      });
+    });
+      
+  </script>
+</head>
+<body id="homepage-body">
+
+  <%= yield %>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-copy-wrapper">
+            <p>Copyright &copy; 2014 | Quotainer.com</p>
+            <p>Built with &hearts; by Grey Thompson</p>
+          </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
