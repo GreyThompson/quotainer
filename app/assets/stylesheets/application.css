@@ -62,7 +62,7 @@ body {
       rgba(1, 1, 1, 0.45)
     ),
 
-    url('/assets/jumbo-background.jpg');
+    url('https://s3.amazonaws.com/quotainer/jumbo-background.jpg');
 
   background-size: cover;
   color: white;
