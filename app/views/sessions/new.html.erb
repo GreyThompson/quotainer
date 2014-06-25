@@ -1,14 +1,13 @@
-<h1 class="text-center">Login</h1>  
+<h1 class="text-center">Login</h1>
 
 <div class="container">
   <div class="col-sm-6 col-sm-offset-3">
-    <%= bootstrap_form_tag url: sessions_path do |f| %>  
-      <%= f.email_field :email, hide_label: true, placeholder: "Enter your email..." %>  
+    <%= bootstrap_form_tag url: sessions_path do |f| %>
+      <%= f.email_field :email, hide_label: true, placeholder: "Enter your email..." %>
       <%= f.password_field :password, hide_label: true, placeholder: "Enter your password..." %>
-      
+
       <%= f.submit 'Login', class: "btn btn-success btn-block" %>
-      
-      <% end %> 
+
+      <% end %>
   </div>
-</div><br><br> 
- 
+</div><br><br>

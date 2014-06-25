@@ -7,9 +7,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    
+
     if @user.save
       auto_login(@user)
+      UserMailer.delay.welcome_email(@user)
       redirect_to new_user_quote_path(@user)
     else
       render 'new'

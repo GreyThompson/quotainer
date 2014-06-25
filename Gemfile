@@ -27,16 +27,18 @@ gem 'spring',        group: :development
 
 gem 'sorcery'
 gem 'bootstrap_form'
+gem 'delayed_job_active_record'
 
 group :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'letter_opener'
 end
 
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  
+
 end
 
 gem 'jwt', '0.1.11'
