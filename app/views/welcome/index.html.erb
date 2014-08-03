@@ -15,9 +15,9 @@
     <div class="collapse navbar-collapse pull-right" id="navbar-collapse-1">
       <ul class="nav navbar-nav">
         <% if current_user.present? %>
-        <li class="user-welcome">Welcome, <span class="text-highlight"><%= current_user.email %></span>.</li>
-        <li><%= link_to 'My Quotes', user_quotes_path(current_user.id) %></li>
-        <li><%= link_to 'Logout', sessions_path, method: :delete %></li>
+        <li class="user-welcome home-nav-btn">Welcome, <span class="text-highlight"><%= current_user.email %></span>.</li>
+        <li><%= link_to 'My Quotes', user_quotes_path(current_user.id), class: "home-nav-btn" %></li>
+        <li><%= link_to 'Logout', sessions_path, method: :delete, class: "home-nav-btn  " %></li>
         <% else %>
         <li><%= link_to 'Login', new_sessions_path, class: "home-nav-btn" %></li>
         <li><%= link_to 'Get Started Free', new_user_path, class: "home-nav-btn sign-up-btn" %></li>
@@ -29,7 +29,7 @@
 <div class="jumbotron homepage-jumbo">
   <h1 class="italic-font">Welcome to <span class="homepage-logo">Quotainer</span></h1>
   <p class="italic-font">The simplest way to save and share your favorite quotes.</p>
-  
+
   <% if current_user.present? %>
   <div class="row">
     <div class="col-sm-3">
@@ -67,7 +67,7 @@
         <div class="row">
           <h2 class="text-center">Create An Account In Seconds</h2>
         </div>
-        <div class="row">      
+        <div class="row">
           <i class="glyphicon glyphicon-user home-glyph"></i>
         </div>
         <div class="row">
@@ -78,7 +78,7 @@
         <div class="row">
           <h2 class="text-center">Never Lose Your Favourite Quotes</h2>
         </div>
-        <div class="row">      
+        <div class="row">
           <i class="glyphicon glyphicon-heart home-glyph"></i>
         </div>
         <div class="row">
@@ -89,7 +89,7 @@
         <div class="row">
           <h2 class="text-center">Your Quotes Available Everywhere</h2>
         </div>
-        <div class="row">      
+        <div class="row">
           <i class="glyphicon glyphicon-cloud home-glyph"></i>
         </div>
         <div class="row">
